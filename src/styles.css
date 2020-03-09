@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: nexaBold;
+    src: url(assets/fonts/nexa-bold.woff);
+}
+@font-face {
+    font-family: nexaBook;
+    src: url(assets/fonts/nexa-book.woff);
+}
+@font-face {
+    font-family: nexaRegular;
+    src: url(assets/fonts/nexa-regular.woff);
+}
+@font-face {
+    font-family: nexaThin;
+    src: url(assets/fonts/nexa-thin.woff);
+}
+
+body{
+    font-family: nexaRegular !important;
+}
+.dashboard-content {
+    height: 100%;
+    background-color: #f8f7fc;
+}
