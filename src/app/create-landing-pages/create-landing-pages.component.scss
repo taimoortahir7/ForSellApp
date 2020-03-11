@@ -1,0 +1,110 @@
+$grayColor: #f0edf8;
+$lightGrayColor: #f8f7fc;
+$purpalColor: #7e0ada;
+$grayText: #636363;
+$darkText: #545454;
+$purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1) 60%);
+
+
+.clp-form-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 100px 0 40px 0;
+}
+.radio-options-wrap {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 40px;
+    .radio-option {
+        padding: 0 5px;
+    }
+}
+.radio-option {
+    img {
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+    img.option-image-white {
+        display: none;
+    }
+    input {
+        position: absolute;
+        visibility: hidden;
+        &:checked + .option-box
+        {
+            background-color: $purpalColor;
+        }
+        &:checked + .option-box
+        {
+            img.option-image-white {
+                display: block;
+            }
+            img.option-image
+            {
+                display: none;
+            }
+            .radio-option-text
+            {
+                color: #fff;
+            }
+        }
+    }
+    .radio-option-text {
+        display: block;
+        color: $purpalColor;
+    }
+    label .option-box {
+        display: block;
+        background-color: #fff;
+        padding: 22px 15px;
+        border-radius: 10px;
+        width: 140px;
+        height: 140px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+.form-fields {
+    margin: 20px 0;
+    padding: 0 20px;
+}
+.theme-field {
+    input {
+        width: 100%;
+        border: 0;
+        padding: 7px 10px;
+        border-radius: 8px;
+        box-shadow: 2px 29px 21px rgba(0, 0, 0, 0.1);
+        outline: none;
+    }
+    select {
+        width: 100%;
+        border: 0;
+        padding: 9px 10px;
+        border-radius: 8px;
+        box-shadow: 2px 29px 21px rgba(0, 0, 0, 0.1);
+        outline: none;
+    }
+}
+.form-note {
+    padding: 20px;
+    text-align: center;
+    a {
+        color: $darkText;
+        text-decoration: underline;
+    }
+}
+.form-btn-wrap
+{
+    padding: 20px;
+    button.form-btn
+    {
+        background: $purpalGradient;
+        color: #fff;
+        width: 100%;
+        border-radius: 8px;
+        padding: 8px 20px;
+    }
+}

@@ -7,10 +7,14 @@ import { HeaderComponent } from './header/header.component';
 import { DashboardSidebarComponent } from './dashboard-sidebar/dashboard-sidebar.component';
 import { LandingPagesComponent } from './landing-pages/landing-pages.component';
 import { CreateLandingPagesComponent } from './create-landing-pages/create-landing-pages.component';
+import { SelectTemplateComponent } from './select-template/select-template.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
-  { path: 'dashboard', component: LandingPagesComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'landing-pages', component: LandingPagesComponent },
   { path: 'create', component: CreateLandingPagesComponent },
+  { path: 'select-template', component: SelectTemplateComponent },
   // { path: 'hero/:id',      component: HeroDetailComponent },
   // {
   //   path: 'heroes',
@@ -31,7 +35,9 @@ const appRoutes: Routes = [
     HeaderComponent,
     DashboardSidebarComponent,
     LandingPagesComponent,
-    CreateLandingPagesComponent
+    CreateLandingPagesComponent,
+    SelectTemplateComponent,
+    DashboardComponent
   ],
   imports: [
     RouterModule.forRoot(

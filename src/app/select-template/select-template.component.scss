@@ -1,0 +1,40 @@
+$grayColor: #f0edf8;
+$lightGrayColor: #f8f7fc;
+$purpalColor: #7e0ada;
+$grayText: #636363;
+$darkText: #545454;
+$purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1) 60%);
+
+
+.select-template-page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 100px 0 40px 0;
+}
+
+.select-templates {
+    padding-top: 40px;
+}
+
+.template-box {
+    text-align: center;
+    margin-bottom: 30px;
+    a {
+        display: block;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.1);
+        img {
+            width: 100%;
+            transition: 2s;
+        }
+        &:hover img
+        {
+            transform: scale(1.1);
+        }
+    }
+    h5 {
+        color: $darkText;
+    }
+}
