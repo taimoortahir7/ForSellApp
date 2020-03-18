@@ -1,0 +1,75 @@
+.builder-siderbar {
+    background-color: #000;
+    height: calc(100vh - 62px);
+}
+
+.b-sidebar-menu ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.b-sidebar-menu ul li a svg {
+    display: block;
+    width: 30px;
+    margin: 0 auto 10px auto;
+}
+
+.b-sidebar-menu ul li a svg path {fill: #898989;}
+
+.b-sidebar-menu ul li {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.b-sidebar-menu ul li a {
+    display: inline-block;
+    color: #898989;
+}
+.b-sidebar-menu ul li.active a,
+.b-sidebar-menu ul li a:hover,
+.b-sidebar-menu ul li a:focus,
+.b-sidebar-menu ul li.active a span,
+.b-sidebar-menu ul li a:hover span,
+.b-sidebar-menu ul li a:focus span,
+.b-sidebar-menu ul li.active a svg path,
+.b-sidebar-menu ul li a:hover svg path,
+.b-sidebar-menu ul li a:focus svg path
+{
+    text-decoration: none;
+    color: #fff;
+    fill: #fff;
+}
+.b-sidebar-bottom-menu ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.b-sidebar-bottom-menu ul li {
+    display: block;
+}
+.b-sidebar-bottom-menu ul li {
+    padding: 5px 10px;
+}
+
+.b-sidebar-bottom-menu ul li a {
+    font-size: 14px;
+    color: #898989;
+}
+.b-sidebar-bottom-menu ul li.active a,
+.b-sidebar-bottom-menu ul li a:hover,
+.b-sidebar-bottom-menu ul li a:focus
+{
+    text-decoration: none;
+    color: #fff;
+}
+.builder-siderbar {
+    position: relative;
+}
+
+.b-sidebar-bottom-menu {
+    position: absolute;
+    bottom: 10px;
+}

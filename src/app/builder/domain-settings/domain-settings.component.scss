@@ -1,0 +1,32 @@
+
+.btn.check-avail.black {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn.check-avail.black:hover, .btn.check-avail.black:focus {
+    background-color: #333333;
+}
+
+.bottom-label p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.custom-domain-configurations {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+}
+
+.custom-domain-configurations p {
+    color: #2f2c49;
+    font-size: 14px;
+}
+
+.custom-domain-configurations ul li {
+    color: #2f2c49;
+    font-size: 14px;
+    font-weight: 600;
+}

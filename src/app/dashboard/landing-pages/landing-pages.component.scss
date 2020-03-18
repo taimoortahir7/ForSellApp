@@ -1,0 +1,123 @@
+$grayColor: #f0edf8;
+$lightGrayColor: #f8f7fc;
+$purpalColor: #7e0ada;
+$grayText: #636363;
+$darkText: #545454;
+$purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1) 60%);
+
+.landing-pages-wrap {
+    padding: 100px 20px;
+}
+.lp-card
+{
+    max-width: 360px;
+    height: 240px;
+    display: flex;
+    display: -webkit-flex;
+    overflow: hidden;
+    border-radius: 20px;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    img {
+        transition: 0.5s;
+        flex: 0 0 100%;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+    &:hover .lp-hover-content
+    {
+        top: 0;
+    }
+}
+.lp-hover-content {
+    flex: 0 0 100%;
+    position: absolute;
+    top: 100%;
+    height: 100%;
+    background-color: rgba(126, 10, 218, 0.5);
+    width: 100%;
+    a.trash-icon {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        font-size: 22px;
+        color: #fff;
+        &:hover
+        {
+            color: #ff0000;
+        }
+    }
+    .hover-content-inner {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        text-align: center;
+        flex-wrap: wrap;
+        align-content: center;
+        a.underline-link {
+            color: #fff;
+            text-decoration: underline;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .preview-btn {
+            color: #fff;
+            font-weight: 600;
+            border: 2px solid #fff;
+            display: inline-block;
+            padding: 11px 37px;
+            line-height: normal;
+            border-radius: 12px;
+            &:hover {
+                background-color: #fff;
+                color: $purpalColor;
+            }
+        }
+        * {
+            flex: 0 0 100%;
+        }
+    }
+}
+.lp-card.create-lp
+{
+    border: 2px dashed #c5c5c8;
+    overflow: visible;
+    .plus-icon-wrap {
+        position: absolute;
+        right: -15px;
+        top: -15px;
+        i {
+            font-size: 25px;
+            background-color: #f8f7fc;
+            padding: 5px;
+            color: #c5c5c8;
+        }
+    }
+    p {
+        font-size: 20px;
+        color: #c5c5c8;
+        text-align: center !important;
+        width: 100%;
+    }
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        display: -webkit-flex;
+        &:hover
+        {
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+

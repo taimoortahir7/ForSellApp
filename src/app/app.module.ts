@@ -3,18 +3,56 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { DashboardSidebarComponent } from './dashboard-sidebar/dashboard-sidebar.component';
-import { LandingPagesComponent } from './landing-pages/landing-pages.component';
-import { CreateLandingPagesComponent } from './create-landing-pages/create-landing-pages.component';
-import { SelectTemplateComponent } from './select-template/select-template.component';
+import { HeaderComponent } from './dashboard/header/header.component';
+import { DashboardSidebarComponent } from './dashboard/sidebar/dashboard-sidebar.component';
+import { LandingPagesComponent } from './dashboard/landing-pages/landing-pages.component';
+import { CreateLandingPagesComponent } from './dashboard/create-landing-pages/create-landing-pages.component';
+import { SelectTemplateComponent } from './dashboard/select-template/select-template.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BuilderDashboardComponent } from './builder/builder-dashboard.component';
+import { BuilderHeaderComponent } from './builder/builder-header/builder-header.component';
+import { BuilderSidebarComponent } from './builder/builder-sidebar/builder-sidebar.component';
+import { BuilderSidebarPanelComponent } from './builder/builder-sidebar-panel/builder-sidebar-panel.component';
+import { BuilderSidebarSettingsComponent } from './builder/builder-sidebar-settings/builder-sidebar-settings.component';
+import { DomainSettingsComponent } from './builder/domain-settings/domain-settings.component';
+import { GeneralSettingsComponent } from './builder/general-settings/general-settings.component';
+import { TransferDomainsComponent } from './dashboard/transfer-domains/transfer-domains.component';
 
 const appRoutes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'landing-pages', component: LandingPagesComponent },
-  { path: 'create', component: CreateLandingPagesComponent },
-  { path: 'select-template', component: SelectTemplateComponent },
+  {
+    path: '',
+    component: DashboardComponent,
+    children: [
+      // {
+      //   path: '',
+      //   loadChildren: './header/',
+      //   pathMatch: 'prefix',
+      //   canActivate: [ LandingPagesComponent ]
+      // },
+      { path: 'landing-pages', component: LandingPagesComponent },
+      { path: 'create', component: CreateLandingPagesComponent },
+      { path: 'select-template', component: SelectTemplateComponent },
+    ]
+  },
+  {
+    path: 'builder',
+    component: BuilderDashboardComponent,
+    children: [
+      // {
+      //   path: '',
+      //   loadChildren: './admin-panel/admin.module#AdminModule',
+      //   pathMatch: 'prefix',
+      //   canLoad: [ AdminCanLoadService ]
+      // }
+      { path: 'builder', component: BuilderDashboardComponent },
+      { path: 'domain-settings', component: DomainSettingsComponent },
+      { path: 'general-settings', component: GeneralSettingsComponent }
+    ]
+  },
+  { path: '**', redirectTo: '' }
+  // { path: 'dashboard', component: DashboardComponent },
+  
+  
   // { path: 'hero/:id',      component: HeroDetailComponent },
   // {
   //   path: 'heroes',
@@ -37,7 +75,15 @@ const appRoutes: Routes = [
     LandingPagesComponent,
     CreateLandingPagesComponent,
     SelectTemplateComponent,
-    DashboardComponent
+    DashboardComponent,
+    BuilderDashboardComponent,
+    BuilderHeaderComponent,
+    BuilderSidebarComponent,
+    BuilderSidebarPanelComponent,
+    BuilderSidebarSettingsComponent,
+    DomainSettingsComponent,
+    GeneralSettingsComponent,
+    TransferDomainsComponent
   ],
   imports: [
     RouterModule.forRoot(
