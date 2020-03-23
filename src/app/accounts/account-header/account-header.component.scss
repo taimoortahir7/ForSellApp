@@ -1,0 +1,36 @@
+$purpalColor: #7e0ada;
+$purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1) 60%);
+.account-menu-wrap ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.account-menu-wrap ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.account-menu-wrap ul li:last-child {
+    margin-right: 0;
+}
+
+.account-btn {
+    padding: 7px 20px;
+    display: block;
+    color: $purpalColor;
+    border: 1px solid $purpalColor;
+    border-radius: 7px;
+    font-weight: 600;
+}
+
+.account-header {
+    padding: 10px 60px;
+}
+
+.account-btn:hover, .account-btn:focus {
+    background: $purpalGradient;;
+    color: #fff;
+    text-decoration: none;
+}

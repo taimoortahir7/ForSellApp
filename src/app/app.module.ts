@@ -17,8 +17,16 @@ import { BuilderSidebarSettingsComponent } from './builder/builder-sidebar-setti
 import { DomainSettingsComponent } from './builder/domain-settings/domain-settings.component';
 import { GeneralSettingsComponent } from './builder/general-settings/general-settings.component';
 import { TransferDomainsComponent } from './dashboard/transfer-domains/transfer-domains.component';
+import { AccountHeaderComponent } from './accounts/account-header/account-header.component';
+import { AccountFooterComponent } from './accounts/account-footer/account-footer.component';
+import { ForgotPasswordComponent } from './accounts/forgot-password/forgot-password.component';
+import { SigninComponent } from './accounts/signin/signin.component';
+import { CreateAccountComponent } from './accounts/create-account/create-account.component';
+import { AccountComponent } from './accounts/account.component';
+import { TestComponent } from './test/test.component';
 
 const appRoutes: Routes = [
+  { path: 'test', component: TestComponent },
   {
     path: '',
     component: DashboardComponent,
@@ -32,6 +40,7 @@ const appRoutes: Routes = [
       { path: 'landing-pages', component: LandingPagesComponent },
       { path: 'create', component: CreateLandingPagesComponent },
       { path: 'select-template', component: SelectTemplateComponent },
+      { path: 'transfer-domains', component: TransferDomainsComponent },
     ]
   },
   {
@@ -47,6 +56,22 @@ const appRoutes: Routes = [
       { path: 'builder', component: BuilderDashboardComponent },
       { path: 'domain-settings', component: DomainSettingsComponent },
       { path: 'general-settings', component: GeneralSettingsComponent }
+    ]
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
+    children: [
+      // {
+      //   path: '',
+      //   loadChildren: './admin-panel/admin.module#AdminModule',
+      //   pathMatch: 'prefix',
+      //   canLoad: [ AdminCanLoadService ]
+      // }
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: 'login', component: SigninComponent },
+      { path: 'sign-up', component: CreateAccountComponent },
+      { path: 'forgot', component: ForgotPasswordComponent }
     ]
   },
   { path: '**', redirectTo: '' }
@@ -83,7 +108,14 @@ const appRoutes: Routes = [
     BuilderSidebarSettingsComponent,
     DomainSettingsComponent,
     GeneralSettingsComponent,
-    TransferDomainsComponent
+    TransferDomainsComponent,
+    AccountHeaderComponent,
+    AccountFooterComponent,
+    ForgotPasswordComponent,
+    SigninComponent,
+    CreateAccountComponent,
+    AccountComponent,
+    TestComponent
   ],
   imports: [
     RouterModule.forRoot(

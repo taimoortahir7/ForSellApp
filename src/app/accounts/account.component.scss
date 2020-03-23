@@ -1,0 +1,11 @@
+.account-page {
+    min-height: calc(100vh - 168px);
+    display: flex;
+    display: -webkit-flex;
+    display: wrap;
+    align-items: center;
+    justify-content: center;
+}
+app-forgot-password {
+    width: 100%;
+}
