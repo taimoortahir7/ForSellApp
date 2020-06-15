@@ -1,39 +1,69 @@
-$grayColor: #f0edf8;
-$lightGrayColor: #f8f7fc;
-$purpalColor: #7e0ada;
-$grayText: #636363;
-$darkText: #545454;
-$purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1) 60%);
+@import "variables.scss";
 
-
-body
-{
+body{
+    font-family: 'Poppins', sans-serif;
     background: $lightGrayColor;
 }
-app-builder-sidebar-panel {
-    position: absolute;
-    background-color: #eaeaea;
-    left: 83px;
-    z-index: 2;
-    height: calc(100vh - 62px);
-    top: 0;
+button[disabled] {
+    background: #ccc !important;
+    cursor: not-allowed;
+    border-color: transparent;
+    color: #fff;
 }
-.builder-dashboard-content
-{
+.form-error {
+    display: block;
+    color: red;
+}
+.theme-btn { @include theme-btn; }
+
+.dashboard-content {
     height: 100%;
-    background-color: #f8f7fc;
-    padding-left: 200px;
+    background-color: $lightGrayColor;
+}
+.builder-dashboard-content {
+    height: 100%;
+    background-color: #fff;
+    // padding-left: 200px;
+}
+.builder-dashboard-content .row {
+    height: 100%;
+}
+.section-heading {
+    text-align: center;
+    h2 {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 0;
+        color: $darkText;
+    }
+    p {
+        font-size: 16px;
+        color: $darkText;
+        font-weight: 500;
+    }
+}
+
+app-builder-sidebar-panel {
+    .sidebar-panel
+    {
+        background-color: $lightGrayColor;
+        height: calc(100vh - 62px);
+        width: 200px;
+    }   
+}
+app-signin {
+    width: 100%;
 }
 .page-heading {
     padding: 30px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
+    h1 {
+        font-size: 48px;
+        margin-bottom: 0;
+    }
 }
 
-.page-heading h1 {
-    font-size: 48px;
-    margin-bottom: 0;
-}
 
 .settings-section-wrap {
     padding: 20px 0 30px 0;
@@ -45,12 +75,17 @@ app-builder-sidebar-panel {
     font-weight: 700;
 }
 
-.settings-text p {
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 20px;
-    color: #767676;
+.settings-text{
+    max-width: 400px;
+    p {
+        margin-bottom: 0;
+        font-size: 14px;
+        line-height: 20px;
+        color: $grayText;
+    }
 }
+
+
 
 .theme-input-group .input-group-text {
     background-color: #000;
@@ -65,85 +100,248 @@ app-builder-sidebar-panel {
     justify-content: space-between;
     padding: 5px 0;
 }
-.settings-text {
-    max-width: 400px;
-}
-
 .simple-input {
     width: 100%;
     padding: 5px;
 }
-
-
-h2.form-heading {
+.form-heading {
     font-size: 28px;
     font-weight: 700;
-    color: $purpalColor;
+    color: $themeColor;
     margin-bottom: 10px;
 }
-
-p.form-text {
+.form-text {
     margin: 0 0 20px 0;
     font-weight: 600;
 }
 
-.a-form-field {
-    background-color: #eef2f5;
-    margin-bottom: 20px;
-    padding: 15px 60px 15px 60px;
-    border-radius: 10px;
-    position: relative;
-}
 
-.a-form-field .field-icon {
-    font-size: 24px;
-    position: absolute;
-    left: 15px;
-    color: #ccc;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.field-label {
-    display: block;
-    margin-bottom: 0;
-    font-size: 14px;
-    color: #ccc;
-}
-
-.a-form-field .form-field {
-    width: 100%;
-    border: 0;
-    padding: 5px;
-    margin-top: 5px;
-    background-color: transparent;
-    border-bottom: 1px solid #e6e6e6;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.field-validator-icon {
-    position: absolute;
-    font-size: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 15px;
-    color: #ccc;
-}
-
-.a-form-field .form-field:focus {
-    outline: none;
-}
-.validated
+.form-field-wrap
 {
+    padding: 20px 0;
+    .a-form-field {
+        background-color: #eef2f5;
+        padding: 15px 60px 15px 60px;
+        position: relative;
+        &:first-child
+        {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        &:last-child
+        {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .field-icon {
+            font-size: 24px;
+            position: absolute;
+            left: 15px;
+            color: #a0a3b2;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .form-field {
+            width: 100%;
+            border: 0;
+            padding: 5px;
+            margin-top: 5px;
+            background-color: transparent;
+            border-bottom: 1px solid #e6e6e6;
+            font-size: 14px;
+            font-weight: 600;
+            &:focus {
+                outline: none;
+            }
+        }
+        .field-label {
+            display: block;
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #a0a3b2;
+        }
+        .field-validator-icon {
+            position: absolute;
+            font-size: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            // color: #ccc;
+            color: #00ac39;
+            display: none;
+        }
+        .ng-valid + .validated {
+            display: block;
+        }
+    }
+}
+
+.a-form-btn {
+    @include theme-btn;
+    width: 100%;
+}
+
+.gray-link {
+    color: $grayText;
+}
+
+.remember-me {
+    padding: 10px 0;
+    label {
+        position: relative;
+        margin-bottom: 0;
+        color: $grayColor;
+        input {
+            position: absolute;
+            opacity: 0;
+        }
+    }
+}
+
+
+.checkbox-label {
+    display: inline-block;
+    padding-left: 24px;
+    cursor: pointer;
+    color: $grayText;
+}
+.checkmark {
+    display: inline-block;
+    &:before {
+        content: "\f058";
+        font-family: fontawesome;
+        position: absolute;
+        left: 0;
+        font-size: 18px;
+        top: -1px;
+        color: #b0b0b0;
+    }
+}
+.remember-me label input:checked ~ span.checkmark:before {
     color: #00ac39;
 }
-.a-form-btn {
-    width: 100%;
-    padding: 7px 20px;
-    border: 0;
-    background: $purpalGradient;
-    color: #fff;
-    border-radius: 7px;
-    font-weight: 600;
+
+
+.social-signin {
+    padding: 20px 0;
+    .gray-text {
+        color: $grayText;;
+    }
 }
+.social-signin-links {
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        li {
+            margin: 5px;
+            display: inline-block;
+            img {
+                max-width: 40px;
+                border-radius: 100%;
+            }
+            
+        }
+    }
+}
+.social-signin-links ul li a:hover img
+{
+    box-shadow: 0px 3px 3px #aaaaaa;   
+}
+.left-image img
+{
+    max-width: 100%;
+}
+.form-btn-wrap
+{
+    .theme-btn
+    {
+        width: 100%;
+    }
+}
+.mb-item
+{
+    display: none;
+}
+.menu-btn
+{
+    display: none;
+}
+
+/** MEDIA QUERIES **/ 
+@media only screen and (max-width: 1024px){
+    .mb-item
+    {
+        display: block;
+    }
+    .dashboard-sidebar
+    {
+        position: absolute;
+        left: -350px;
+        transition: 0.5s;
+        z-index: 2;
+    }
+    .dashboard-sidebar.open
+    {
+        left: 0;
+    }
+    .desk-item
+    {
+        display: none !important;
+    }
+    .menu-btn {
+        display: inline-block;
+        color: $themeColor;
+        font-size: 22px;
+    }
+
+    .header-right {
+        text-align: right;
+    }
+
+}
+
+@media only screen and (max-width: 992px){
+    .signin-form {
+        padding: 20px 0;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .form-btn-wrap {
+        margin-bottom: 10px;
+    }
+    
+    .a-form-bottom .gray-link {
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+    
+    .account-header {
+        padding: 20px 40px !important;
+    }
+}
+@media only screen and (max-width: 767px){
+    nav.account-menu-wrap ul {
+        text-align: left !important;
+        padding: 20px 0;
+    }
+    
+    nav.account-menu-wrap ul li:first-child {
+        margin-left: 0 !important;
+    }
+    
+    .account-header {
+        padding: 20px 0px !important;
+    }
+    
+    nav.footer-menu ul li {
+        padding: 0 15px !important;
+        margin-bottom: 10px;
+    }
+    
+    nav.footer-menu ul {
+        text-align: left !important;
+    }
+}
+/** END MEDIA QUERIES **/ 

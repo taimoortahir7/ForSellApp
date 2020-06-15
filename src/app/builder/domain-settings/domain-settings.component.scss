@@ -1,4 +1,4 @@
-
+@import "../../../variables.scss";
 .btn.check-avail.black {
     background-color: #000;
     color: #fff;
@@ -29,4 +29,15 @@
     color: #2f2c49;
     font-size: 14px;
     font-weight: 600;
+}
+
+@media only screen and (max-width: 767px){
+    .page-heading {
+        padding: 10px;
+    }
+    
+    .page-heading h1 {
+        font-size: 24px;
+        padding-left: 10px;
+    }
 }

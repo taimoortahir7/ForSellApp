@@ -23,8 +23,8 @@ export class SelectTemplateComponent implements OnInit {
     //do something here
     this.hideModal();
   }
-  hideModal():void {
-    document.getElementById('close-modal').click();
+  hideModal() {
+    $("#myModal").modal('hide');
   }
 
 }

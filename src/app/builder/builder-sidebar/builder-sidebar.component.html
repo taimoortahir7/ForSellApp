@@ -2,7 +2,7 @@
   <nav class="b-sidebar-menu">
     <ul>
       <li>
-        <a href="#">
+        <a routerLink="/builder/general-settings"   (click)="openSub()">
           <svg id="icon-setup" viewBox="0 0 1024 1024" preserveAspectRatio="xMidYMid">
             <title>icon-setup</title>
             <path d="M956.2,649h-58c-4.8,13.6-10.3,26.9-16.4,39.7l0,0l31,31c26.6,26.7,26.6,69.9,0,96.5l-96.5,96.6
@@ -31,7 +31,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a routerLink="/builder/create" (click)="closeSub()">
           <svg id="icon-builder" viewBox="0 0 1024 1024" preserveAspectRatio="xMidYMid">
             <title>icon-builder</title>
             <path d="M655.1,494.4l78.9-81.5c21.8,7.8,44.9,11.9,67.9,11.9c0,0,0,0,0,0c54.8,0,106.2-22,144.9-62c95.7-98.9,50-216.2,48.1-221.1
@@ -66,10 +66,10 @@
   <div class="b-sidebar-bottom-menu">
     <ul>
       <li>
-        <a href="#">Account</a>
+        <a routerLink="/dashboard">Account</a>
       </li>
       <li>
-        <a href="#">Sign Out</a>
+        <a href="javascript:void(0)" (click)="logout()">Sign Out</a>
       </li>
     </ul>
   </div>

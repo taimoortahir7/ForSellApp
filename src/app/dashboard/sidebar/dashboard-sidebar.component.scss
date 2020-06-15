@@ -1,10 +1,4 @@
-$grayColor: #f0edf8;
-$lightGrayColor: #f8f7fc;
-$purpalColor: #7e0ada;
-$grayText: #636363;
-$darkText: #545454;
-$purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1) 60%);
-
+@import "../../../variables.scss";
 .dashboard-sidebar
 {
     background-color: $grayColor;
@@ -15,27 +9,33 @@ $purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1)
 }
 .sidebar-menu
 {
-    padding-top: 100px;
+    padding-top: 60px;
     ul{
         list-style: none;
         margin-bottom: 0;
         padding-left: 0;
         li a {
-            font-size: 22px;
+            font-size: 18px;
             color: $grayText;
-            padding: 10px 30px;
+            padding: 7px 30px;
             display: block;
             &:hover
             {
-                background: $purpalGradient;
+                background: $themeGradient;
                 color: #fff;
                 text-decoration: none;
             }
         }
         
         li.active a {
-            background: $purpalGradient;
+            background: $themeGradient;
             color: #fff;
         }
     }  
+}
+@media only screen and (max-width: 1024px){
+    .dashboard-sidebar
+    {
+        min-height: calc(100vh - 73px);
+    }
 }

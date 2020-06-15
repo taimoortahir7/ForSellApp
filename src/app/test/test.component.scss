@@ -1,0 +1,35 @@
+#gjs {
+  border: 3px solid #444;
+}
+
+/* Reset some default styling */
+.gjs-cv-canvas {
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gjs-block {
+  width: auto;
+  height: auto;
+  min-height: auto;
+}
+
+#gjs /deep/ .gjs-cv-canvas {
+  width: 100% !important;
+  top: 0 !important;
+  margin-left: 0 !important;
+}
+
+#blocks,
+.panel__top {
+  width: 200px;
+}
+
+.panel__switcher {
+  position: initial;
+}
+.layer-style {
+  background: #444;
+  height: 100%;
+}

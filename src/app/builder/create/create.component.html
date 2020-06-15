@@ -1,0 +1,65 @@
+<div class="create-page">
+  <div class="row no-gutters">
+    <div class="col-auto">
+      <div class="gray-panel">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-edit-tab" data-toggle="tab" href="#nav-edit" role="tab" aria-controls="nav-edit" aria-selected="true">Edit</a>
+            <a class="nav-item nav-link" id="nav-theme-tab" data-toggle="tab" href="#nav-theme" role="tab" aria-controls="nav-theme" aria-selected="false">Theme</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-edit" role="tabpanel" aria-labelledby="nav-edit-tab">
+            <div class="heading-row">
+              <h4 class="sidebar-heading">Template</h4>
+              <a href="#" class="sidebar-link">Change</a>
+            </div>
+            <div class="tools-templates-box">
+              <div class="sidebar-template-image">
+                <img src="assets/images/newsletter-subscription.png" alt="Template Image">
+              </div>
+              <p class="s-template-label">Sell This Domain</p>
+            </div>
+            <div class="heading-row">
+              <h4 class="sidebar-heading">Blocks</h4>
+              <a (click)="add_block()" class="sidebar-link">+ Add Block</a>
+            </div>
+            <div class="panel__right">
+              <div class="panel__top">
+                <div class="panel__basic-actions"></div>
+                <div class="panel__switcher"></div>
+              </div>
+              <div class="layers-container" [hidden]="layerShow"></div> 
+            </div>
+            <div class="panel__right">
+              <div class="styles-container" [hidden]="styleShow">
+                  <div id="traits-container"></div>
+              </div>    
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-theme" role="tabpanel" aria-labelledby="nav-theme-tab">
+            <p>ABC</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="toolbar open" [ngClass]="{'open' : add_layers_block == true}">
+        <button class="toolbar-btn" (click)="close_block()"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+        <div class="styles-container" [hidden]="styleShow"></div>
+        <div id="blocks"></div>
+      </div>
+    </div>
+   
+    
+    <div class="col">
+      <div id="gjs"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

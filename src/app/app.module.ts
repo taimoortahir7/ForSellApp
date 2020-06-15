@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
@@ -17,34 +18,43 @@ import { BuilderSidebarSettingsComponent } from './builder/builder-sidebar-setti
 import { DomainSettingsComponent } from './builder/domain-settings/domain-settings.component';
 import { GeneralSettingsComponent } from './builder/general-settings/general-settings.component';
 import { TransferDomainsComponent } from './dashboard/transfer-domains/transfer-domains.component';
-import { AccountHeaderComponent } from './accounts/account-header/account-header.component';
-import { AccountFooterComponent } from './accounts/account-footer/account-footer.component';
-import { ForgotPasswordComponent } from './accounts/forgot-password/forgot-password.component';
-import { SigninComponent } from './accounts/signin/signin.component';
-import { CreateAccountComponent } from './accounts/create-account/create-account.component';
 import { AccountComponent } from './accounts/account.component';
 import { TestComponent } from './test/test.component';
+import { MessagesComponent } from './dashboard/messages/messages.component';
+import { CreateComponent } from './builder/create/create.component';
+import { LoginCheck } from './login-service.guard';
+import { AuthGuardService } from './auth.guard';
+import { AccountHeaderComponent } from './accounts/account-header/account-header.component';
+import { AccountFooterComponent } from './accounts/account-footer/account-footer.component';
 
 const appRoutes: Routes = [
-  { path: 'test', component: TestComponent },
   {
     path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  },
+  {
+    path: '',    
+    component: AccountComponent,    
+    canActivate: [LoginCheck],
+    loadChildren: './accounts/auth.module#AuthModule'
+  },
+  { path: 'test', component: TestComponent },
+  {
+    path: 'dashboard',
+    canActivate: [AuthGuardService],
     component: DashboardComponent,
     children: [
-      // {
-      //   path: '',
-      //   loadChildren: './header/',
-      //   pathMatch: 'prefix',
-      //   canActivate: [ LandingPagesComponent ]
-      // },
       { path: 'landing-pages', component: LandingPagesComponent },
       { path: 'create', component: CreateLandingPagesComponent },
       { path: 'select-template', component: SelectTemplateComponent },
       { path: 'transfer-domains', component: TransferDomainsComponent },
+      { path: 'messages', component: MessagesComponent },
     ]
   },
   {
     path: 'builder',
+    canActivate: [AuthGuardService],
     component: BuilderDashboardComponent,
     children: [
       // {
@@ -55,26 +65,11 @@ const appRoutes: Routes = [
       // }
       { path: 'builder', component: BuilderDashboardComponent },
       { path: 'domain-settings', component: DomainSettingsComponent },
-      { path: 'general-settings', component: GeneralSettingsComponent }
+      { path: 'general-settings', component: GeneralSettingsComponent },
+      { path: 'create', component: CreateComponent }
     ]
   },
-  {
-    path: 'account',
-    component: AccountComponent,
-    children: [
-      // {
-      //   path: '',
-      //   loadChildren: './admin-panel/admin.module#AdminModule',
-      //   pathMatch: 'prefix',
-      //   canLoad: [ AdminCanLoadService ]
-      // }
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
-      { path: 'login', component: SigninComponent },
-      { path: 'sign-up', component: CreateAccountComponent },
-      { path: 'forgot', component: ForgotPasswordComponent }
-    ]
-  },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '/login' }
   // { path: 'dashboard', component: DashboardComponent },
   
   
@@ -109,23 +104,24 @@ const appRoutes: Routes = [
     DomainSettingsComponent,
     GeneralSettingsComponent,
     TransferDomainsComponent,
+    AccountComponent,
+    TestComponent,
+    MessagesComponent,
+    CreateComponent,    
     AccountHeaderComponent,
     AccountFooterComponent,
-    ForgotPasswordComponent,
-    SigninComponent,
-    CreateAccountComponent,
-    AccountComponent,
-    TestComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     ),
     BrowserModule,
     AngularFontAwesomeModule
   ],
   providers: [],
-  bootstrap: [AppComponent, HeaderComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

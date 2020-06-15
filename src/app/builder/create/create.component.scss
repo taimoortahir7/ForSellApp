@@ -1,0 +1,120 @@
+@import "../../../variables.scss";
+
+.toolbar {
+    max-width: 170px;
+    height: 100%;
+    background-color: #444;
+    margin-left: -200px;
+    transition: all 0.25s ease-in 0s;
+    z-index: -99;
+    position: relative;
+}
+.toolbar.open {
+    margin-left: 0;
+    z-index: 9;
+}
+button.toolbar-btn {
+    position: absolute;
+    right: -18px;
+    top: 0px;
+    background: #000;
+    border: none;
+    color: #fff;
+    padding: 0 6px;
+    border-right: 1px solid blue;
+    height: 30px;
+    line-height: 30px;
+}
+.tool-gray-panel
+{
+    background-color: $lightGrayColor;
+    width: 200px;
+    position: relative;
+}
+.create-page {
+    height: 100%;
+}
+.gjs-pn-panel {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    background: #fff;
+}
+#gjs /deep/ .gjs-one-bg
+{
+    background-color: #fff !important;
+}
+#gjs /deep/ .gjs-one-bg /deep/ .gjs-cv-canvas
+{
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.gray-panel {
+    width: 220px;
+}
+.panel__switcher /deep/ .gjs-pn-btn {
+    font-size: 15px;
+    padding: 6px 0;
+    width: 50%;
+    color: #000;
+    margin: 0;
+}
+.gray-panel .nav-tabs {
+    border-bottom: 0;
+}
+
+.gray-panel .nav-tabs a {width: 50%;padding: 10px 20px;text-align: center;border: 0;text-transform: uppercase;font-weight: 700;font-size: 14px;}
+
+.gray-panel .nav-tabs a.active {
+    color: #333;
+    background-color: transparent !important;
+}
+
+.gray-panel .nav-tabs a {
+    background-color: #ededed;
+    color: #9f9f9f;
+}
+
+.heading-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.heading-row h4 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.heading-row a {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #333;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.tools-templates-box img {
+    width: 100%;
+}
+
+.sidebar-template-image {
+    padding: 10px;
+}
+
+.s-template-label {
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #959595;
+}
+.panel__switcher {
+    position: relative;
+    display: block;
+    margin-bottom: 0;
+    padding: 0;
+}

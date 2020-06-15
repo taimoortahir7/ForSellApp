@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import 'grapesjs/dist/css/grapes.min.css';
 import grapesjs from 'grapesjs';
 import 'grapesjs-preset-webpage';
-
+let editor;
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss']
 })
-export class TestComponent implements OnInit {
+export class TestComponent implements OnInit, AfterViewInit {
   private _editor: any;
+  layerShow = false;
+  styleShow = true;
   constructor() { }
 
   get editor() {
@@ -17,75 +19,220 @@ export class TestComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._editor = this.initializeEditor();
-    this.editor.on('asset:add', () => {
-      console.log('Asset add fired');
-      // this.editor.runCommand('open-assets');
+    editor = this.initializeEditor();
+    const bm = editor.BlockManager;
+    
+    editor.on('load', () => {
+      editor.BlockManager.render([
+        bm.get('wrapper').set('category', ''),
+        bm.get('column1').set('category', ''),
+        bm.get('column2').set('category', ''),
+        bm.get('column3').set('category', ''),
+        bm.get('text').set('category', ''),
+        bm.get('image').set('category', '')
+      ])
     });
-    var blockManager = this._editor.BlockManager;
-
-  }
-  private initializeEditor(): any {
-    console.dir(window);
-    return grapesjs.init({
-      container: '#gjs',
-      autorender: true,
-      forceClass: false,
-      components: '',
-      style: '',
-      plugins: ['gjs-preset-webpage'],
-      pluginsOpts: {
-        'gjs-preset-webpage': {
-          navbarOpts: false,
-          countdownOpts: false,
-          formsOpts: false,
-          blocksBasicOpts: {
-            blocks: ['link-block', 'quote', 'image', 'video', 'text', 'column1', 'column2', 'column3', 'div'],
-            flexGrid: false,
-            stylePrefix: 'lala-'
-          }
-        }
-      },
-      assetManager: {
-        uploadText: 'Add image through link or upload image',
-        modalTitle: 'Select Image',
-        openAssetsOnDrop: 1,
-        inputPlaceholder: 'http://url/to/the/image.jpg',
-        addBtnText: 'Add image',
-        uploadFile: (e) => {
-          const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-        },
-        handleAdd: (textFromInput) => {
-          this.editor.AssetManager.add(textFromInput);
-        }
-      },
-      canvas: {
+    // editor.runCommand('sw-visibility');
+    bm.add('custom-block-1', {
+      id: 'cb1',
+      label: 'Custom one',
+      content: {
+        tagName: 'div',
+        draggable: true,
+        attributes: { 'custom-block-1-attribute': 'hola!' },
         components: [
           {
             tagName: 'div',
-            components: [
-              {
-                type: 'image',
-                attributes: { src: 'https://path/image' },
-              }, {
-                tagName: 'span',
-                type: 'text',
-                attributes: { title: 'foo' },
-                components: [{
-                  type: 'textnode',
-                  content: 'Hello wdsforld!!!'
-                }]
-              }
-            ]
+            className: 'testclass',
+            content: '<h2>A custom component content</h2>',
           }
-        ],          
-        styles: [
-          'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-          'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
-        ],
-        scripts: ['https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js']
+        ]
+      }
+    })
+    bm.add('custom-block-2', {
+      id: 'cb1',
+      label: 'Custom two',
+      content: {
+        tagName: 'div',
+        draggable: true,
+        attributes: { 'custom-block-1-attribute': 'hola!' },
+        components: [
+          {
+            tagName: 'div',
+            className: 'testclass',
+            content: '<h2>A custom component content</h2>',
+          }
+        ]
+      }
+    })
+    bm.add('custom-block-3', {
+      id: 'cb13',
+      label: 'input',
+      content: {
+        tagName: 'input',
+        // draggable: 'form, form *', // Can be dropped only inside `form` elements
+        droppable: true, // Can't drop other elements inside
+        attributes: { // Default attributes
+          type: 'text',
+          name: 'default-name',
+          placeholder: 'Insert text here',
+        },
+        components: [
+          'name',
+          'placeholder',
+          { type: 'checkbox', name: 'required' },
+          
+        ]
+      }
+    })
+    
+    // editor.addComponents(`<input name="my-test" title="hello"/>`)
+    
+  }
+
+  ngAfterViewInit() {
+    const that = this;
+    setTimeout(()=>{
+      editor.Commands.add('show-layers', {
+        run(editor, sender) {
+          that.layerShow = false;
+          that.styleShow = true;
+        },
+        stop(editor, sender) {
+          that.styleShow = false;
+          that.layerShow = true;
+        },
+      });
+    },2000);
+    
+  }
+  private initializeEditor(): any {
+    return grapesjs.init({
+      container: '#gjs',
+      fromElement: true,
+      // Size of the editor
+      height: '100%',
+      width: 'auto',
+      // Disable the storage manager for the moment
+      storageManager: false,
+      plugins: ['gjs-blocks-basic'],
+      // Avoid any default panel
+      layerManager: {
+        appendTo: '.layers-container'
+      },
+      panels: { 
+        defaults: [
+          {
+            id: 'layers',
+            el: '.panel__right',
+            // Make the panel resizable
+            resizable: {
+              maxDim: 350,
+              minDim: 200,
+              tc: 0, // Top handler
+              cl: 1, // Left handler
+              cr: 1, // Right handler
+              bc: 1, // Bottom handler
+              // Being a flex child we need to change `flex-basis` property
+              // instead of the `width` (default)
+              keyWidth: 'flex-basis',
+            },
+          },
+          {
+            id: 'panel-switcher',
+            el: '.panel__switcher',
+            buttons: [{
+              id: 'show-layers',
+              active: true,
+              label: 'Layers',
+              command: 'show-layers',
+              // Once activated disable the possibility to turn it off
+              togglable: true,
+            },
+            {
+              id: 'show-style',
+              active: false,
+              label: 'Styles',
+              // command: 'show-styles',
+              togglable: true,
+            }
+          ],
+          }
+        ] 
+      },
+    
+      blockManager: {
+        appendTo: '#blocks',
+        // blocks: [
+        //   {
+        //     id: 'section', // id is mandatory
+        //     label: '<b>Section</b>', // You can use HTML/SVG inside labels
+        //     attributes: { class:'gjs-block-section' },
+        //     content: `<section>
+        //       <h1>This is a simple title</h1>
+        //       <div>This is just a Lorem text: Lorem ipsum dolor sit amet</div>
+        //     </section>`,
+        //   }, 
+        //   {
+        //     id: 'text',
+        //     label: 'Text',
+        //     content: '<div data-gjs-type="text">Insert your text here</div>',
+        //   }, 
+        //   {
+        //     id: 'image',
+        //     label: 'Image',
+        //     // Select the component once it's dropped
+        //     select: true,
+        //     // You can pass components as a JSON instead of a simple HTML string,
+        //     // in this case we also use a defined component type `image`
+        //     content: { type: 'image' },
+        //     // This triggers `active` event on dropped components and the `image`
+        //     // reacts by opening the AssetManager
+        //     activate: true,
+        //   }
+        // ]
+      },
+      selectorManager: {
+        appendTo: '.styles-container'
+      },
+      styleManager: {
+        appendTo: '.styles-container',
+        sectors: [{
+          name: 'General',
+          open: false,
+          buildProps: ['float', 'display', 'position', 'top', 'right', 'left', 'bottom']
+        },{
+          name: 'Dimension',
+          open: false,
+          buildProps: [ 'width', 'height', 'max-width', 'min-height', 'margin', 'padding']
+        },{
+          name: 'Typography',
+          open: false,
+          buildProps: ['font-family', 'font-size', 'font-weight', 'letter-spacing', 'color', 'line-height', 'text-align', 'text-shadow']
+        },{
+          name: 'Decorations',
+          open: false,
+          buildProps: ['border-radius-c', 'background-color', 'border-radius', 'border', 'box-shadow', 'background'],
+        },{
+          name: 'Extra',
+          open: false,
+          buildProps: ['opacity', 'transition', 'perspective', 'transform'],
+          properties: [{
+            type: 'slider',
+            property: 'opacity',
+            defaults: 1,
+            step: 0.01,
+            max: 1,
+            min:0,
+          }]
+        }]
+      },
+      
+      traitManager: {
+        appendTo: '#traits-container',
       }
     });
+    
   }
   
 }

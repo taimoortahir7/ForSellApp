@@ -1,12 +1,9 @@
-$grayColor: #f0edf8;
-$lightGrayColor: #f8f7fc;
-$purpalColor: #7e0ada;
-$grayText: #636363;
-$darkText: #545454;
-$purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1) 60%);
+@import "../../../variables.scss";
 
 .landing-pages-wrap {
-    padding: 100px 20px;
+    padding: 100px 20px 20px 20px;
+    max-width: 1170px;
+    margin: 0 auto;
 }
 .lp-card
 {
@@ -18,7 +15,7 @@ $purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1)
     border-radius: 20px;
     align-items: center;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
     img {
         transition: 0.5s;
         flex: 0 0 100%;
@@ -66,16 +63,13 @@ $purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1)
         }
         
         .preview-btn {
+            @include theme-btn;
+            border-color: #fff;
+            background: transparent;
             color: #fff;
-            font-weight: 600;
-            border: 2px solid #fff;
-            display: inline-block;
-            padding: 11px 37px;
-            line-height: normal;
-            border-radius: 12px;
             &:hover {
-                background-color: #fff;
-                color: $purpalColor;
+                background: #fff;
+                color: $themeColor;
             }
         }
         * {
@@ -117,7 +111,3 @@ $purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1)
         }
     }
 }
-
-
-
-

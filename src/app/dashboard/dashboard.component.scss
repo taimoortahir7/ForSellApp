@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+
+.main-page
+{
+    min-height: calc(100vh - 90px);
+    height: 100%;
+    background: $lightGrayColor;
+}
+
+@media only screen and (max-width: 1024px){
+    .main-page
+    {
+        min-height: calc(100vh - 73px);
+    }
+}

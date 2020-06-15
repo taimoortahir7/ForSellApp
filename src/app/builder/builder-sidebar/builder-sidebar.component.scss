@@ -1,6 +1,8 @@
+@import "../../../variables.scss";
 .builder-siderbar {
     background-color: #000;
-    height: calc(100vh - 62px);
+    min-height: calc(100vh - 62px);
+    height: 100%;
 }
 
 .b-sidebar-menu ul {

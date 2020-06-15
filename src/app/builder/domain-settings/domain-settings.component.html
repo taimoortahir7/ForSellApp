@@ -1,69 +1,77 @@
-<div class="domain-settings-page">
-  <div class="container-fluid">
-    <div class="page-heading">
-      <h1>Domain</h1>
-    </div>
-    <div class="settings-section-wrap subdomain-settings">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="settings-text">
-            <h4 class="settings-heading">ForSell Subdomain</h4>
-            <p>All sites are assigned a Forsell subdomain. You can personalize your subdomain at any time.</p>
-          </div>
+<!-- *ngIf="isSettingPage" -->
+<div class="row no-gutters">
+  <div class="col-auto">
+    <app-builder-sidebar-panel></app-builder-sidebar-panel>
+  </div>
+  <div class="col-lg">
+    <div class="domain-settings-page">
+      <div class="container-fluid">
+        <div class="page-heading">
+          <h1>Domain</h1>
         </div>
-        <div class="col-lg-8">
-          <div class="settings-section">
-            <div class="input-group mb-3 theme-input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">https://</span>
+        <div class="settings-section-wrap subdomain-settings">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="settings-text">
+                <h4 class="settings-heading">ForSell Subdomain</h4>
+                <p>All sites are assigned a Forsell subdomain. You can personalize your subdomain at any time.</p>
               </div>
-              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-              <div class="input-group-append">
-                <span class="input-group-text">.forsell.com</span>
+            </div>
+            <div class="col-lg-8">
+              <div class="settings-section">
+                <div class="input-group mb-3 theme-input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">https://</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <div class="input-group-append">
+                    <span class="input-group-text">.forsell.com</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="settings-section-wrap custom-settings">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="settings-text">
-            <h4 class="settings-heading">Custom Domain</h4>
-            <p>Point your domain to a Forsell site.</p>
-          </div>
-        </div>
-        <div class="col-lg-8">
-          <div class="settings-section">
-            <div class="input-group mb-3 theme-input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">https://</span>
-              </div>
-              <input type="text" class="form-control">
-            </div>
-            <div class="theme-input-group-bottom">
-              <div class="bottom-label">
-                <p><strong>Correct examples:</strong> signup.yourdomain.com, yourdomain.com</p>
-              </div>
-              <div class="check-avail-wrap">
-                <button class="btn check-avail black">Check availability</button>
+        <div class="settings-section-wrap custom-settings">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="settings-text">
+                <h4 class="settings-heading">Custom Domain</h4>
+                <p>Point your domain to a Forsell site.</p>
               </div>
             </div>
-          </div>
+            <div class="col-lg-8">
+              <div class="settings-section">
+                <div class="input-group mb-3 theme-input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">https://</span>
+                  </div>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="theme-input-group-bottom">
+                  <div class="bottom-label">
+                    <p><strong>Correct examples:</strong> signup.yourdomain.com, yourdomain.com</p>
+                  </div>
+                  <div class="check-avail-wrap">
+                    <button class="btn check-avail black">Check availability</button>
+                  </div>
+                </div>
+              </div>
 
-          <div class="custom-domain-configurations">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat hendrerit ligula. Donec id neque lacus. Praesent sollicitudin elementum eleifend. Ut eleifend mollis eros non eleifend. Suspendisse sit amet lectus ligula. Etiam egestas quis felis mattis scelerisque. Vivamus purus nisl, scelerisque ut ullamcorper eu, malesuada in libero.</p>
-            <ul>
-              <li>54.243.190.28</li>
-              <li>54.243.190.39</li>
-              <li>54.243.190.47</li>
-              <li>54.243.190.54</li>
-            </ul>
-            <p>Once you've modified your A records, it may take up to 72 hours for changes to propogate.</p>
-          </div>
+              <div class="custom-domain-configurations">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat hendrerit ligula. Donec id neque lacus. Praesent sollicitudin elementum eleifend. Ut eleifend mollis eros non eleifend. Suspendisse sit amet lectus ligula. Etiam egestas quis felis mattis scelerisque. Vivamus purus nisl, scelerisque ut ullamcorper eu, malesuada in libero.</p>
+                <ul>
+                  <li>54.243.190.28</li>
+                  <li>54.243.190.39</li>
+                  <li>54.243.190.47</li>
+                  <li>54.243.190.54</li>
+                </ul>
+                <p>Once you've modified your A records, it may take up to 72 hours for changes to propogate.</p>
+              </div>
 
+            </div>
+          </div>
         </div>
       </div>
     </div>

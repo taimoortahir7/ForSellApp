@@ -1,23 +1,24 @@
 <header class="dashboard-header">
   <div class="container-fluid">
     <div class="row align-items-center">
-      <div class="col">
+      <div class="col-6">
         <div class="logo-wrap">
           <a href="#">
             <img src="assets/images/logo.png" alt="for sell logo">
           </a>
         </div>
       </div>
-      <div class="col">
+      <div class="col-6">
         <div class="header-right">
-          <ul>
-
+          <div class="menu-btn">
+            <span (click)="onClickMenu()"><i class="fa fa-bars" aria-hidden="true"></i></span>
+          </div>
+          <ul class="desk-item">
             <li>
-                <a href="#">
+                <a routerLink="/dashboard/messages">
                   <span class="menu-item-name">Messages</span> <span class="notification-dot"></span>
                 </a>
             </li>
-
             <li>
               <div class="dropdown light-dropdown account-dropdown">
                 <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -27,7 +28,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="#">Settings</a>
                   <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Log Out</a>
+                  <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Log Out</a>
                 </div>
               </div>
             </li>

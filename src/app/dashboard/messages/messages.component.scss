@@ -1,0 +1,399 @@
+@import "../../../variables.scss";
+.user-image {
+	img {
+		max-width: 40px;
+		border-radius: 100%;
+	}
+}
+.message-user {
+	img {
+		max-width: 40px;
+		border-radius: 100%;
+	}
+	flex: 0 0 auto;
+	max-width: 80px;
+	padding-right: 20px;
+}
+.user-avatar {
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: $themeColor;
+	border-radius: 100%;
+	color: #fff !important;
+	font-size: 24px;
+	text-align: center;
+	line-height: 40px;
+}
+.top-searchbar {
+	position: relative;
+	border-bottom: 1px solid $grayColor;
+	box-shadow: 0px 3px 7px $grayColor;
+	margin-bottom: 20px;
+	input {
+		width: 100%;
+		padding: 10px 60px 10px 10px;
+		border: 0;
+	}
+	i {
+		font-size: 24px;
+		position: absolute;
+		right: 10px;
+		top: 7px;
+		color: $grayText;
+	}
+}
+.messages-screen {
+	padding: 60px 55px;
+}
+.coversation-list-wrap {
+	height: 100%;
+	box-shadow: 0px 3px 7px $grayColor;
+	background-color: #fff;
+	border-radius: 7px;
+	overflow: hidden;
+	width: 300px;
+}
+.coversation-list {
+	padding: 0 15px;
+}
+.conversation {
+	align-items: center;
+	padding: 15px 0;
+	cursor: pointer;
+	border-radius: 7px;
+	&:hover {
+		background-color: $grayColor;
+	}
+	* {
+		color: $grayText;
+	}
+}
+.conversation.active {
+	background: $themeGradient;
+	&:hover {
+		background: $themeGradient;
+	}
+	* {
+		color: #fff;
+	}
+}
+.conversation-info {
+	h5 {
+		margin-bottom: 0;
+		font-size: 22px;
+		font-weight: 600;
+	}
+	p {
+		font-size: 12px;
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+}
+.conv-actions {
+	a {
+		display: inline-block;
+		padding: 0 3px;
+		color: $themeColor;
+		&:hover {
+			text-decoration: none;
+		}
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}
+a.mark-as-read.read {
+	i.fa-envelope-o {
+		display: none;
+	}
+	i.fa-envelope-open-o {
+		display: block;
+	}
+}
+a.mark-as-read {
+	i.fa-envelope-o {
+		display: block;
+	}
+	i.fa-envelope-open-o {
+		display: none;
+	}
+}
+.conv-date {
+	p {
+		margin-bottom: 0;
+		font-size: 12px;
+		font-weight: 600;
+		text-align: right;
+	}
+}
+.conversation.unread {
+	* {
+		color: $themeColor;
+	}
+	.user-avatar {
+		color: #fff;
+	}
+}
+.mark-as-fav {
+	.fa-star {
+		display: none;
+	}
+	.fa-star-o {
+		display: block;
+	}
+}
+.mark-as-fav.marked {
+	.fa-star-o {
+		display: none;
+	}
+	.fa-star {
+		display: block;
+	}
+}
+.message-main-box {
+	background-color: #fff;
+	box-shadow: 0px 3px 7px $grayColor;
+	border-radius: 7px;
+	overflow: hidden;
+}
+.conversation-header {
+	padding: 10px 15px;
+	background: $themeGradient;
+	h4 {
+		margin-bottom: 0;
+		color: #fff;
+	}
+}
+.conv-chat {
+	padding: 20px 15px;
+	max-height: 600px;
+	overflow-y: auto;
+	&::-webkit-scrollbar {
+		width: 1em;
+	}
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $themeColor;
+		outline: 1px solid $themeColor;
+	}
+}
+.message-body {
+	margin-bottom: 5px;
+}
+.message-inner {
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+}
+.message-user-name {
+	margin-bottom: 0;
+	font-size: 12px;
+	font-weight: 700;
+	margin-top: 5px;
+	text-align: center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.message-text {
+	background-color: $grayColor;
+	border-radius: 5px;
+	padding: 10px 10px 24px 10px;
+	position: relative;
+	min-width: 200px;
+	max-width: calc(100% - 200px);
+}
+.message-date {
+	font-size: 10px;
+	margin-bottom: 0;
+	position: absolute;
+	bottom: 3px;
+	right: 5px;
+	color: $grayText;
+}
+.message {
+	font-size: 14px;
+	margin-bottom: 0;
+	p {
+		font-size: 14px;
+		margin-bottom: 0;
+	}
+	a {
+		color: $themeColor;
+	}
+	h3 {
+		font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+	.m-link {
+		font-weight: 600;
+		text-decoration: underline;
+	}
+}
+.message.offer {
+	text-align: center;
+}
+.offer-btns {
+	a {
+		background-color: $grayColor;
+		margin: 0 5px;
+		color: #fff;
+		padding: 7px 10px;
+		line-height: 14px;
+		font-size: 14px;
+	}
+	margin: 5px 0;
+}
+.green-btn {
+	background-color: #59ca30 !important;
+}
+.red-btn {
+	background-color: #ef6767 !important;
+}
+.message-body.note {
+	text-align: center;
+	position: relative;
+	margin: 20px 0;
+	p {
+		margin-bottom: 0;
+		font-weight: 600;
+		color: $grayText;
+		display: inline-block;
+		font-size: 14px;
+		background-color: #fff;
+		position: relative;
+		padding: 0 10px;
+	}
+	&:before {
+		content: '';
+		height: 1px;
+		width: 100%;
+		display: block;
+		background-color: $grayColor;
+		top: 12px;
+		position: absolute;
+	}
+}
+.note-date {
+	display: block;
+	font-size: 12px;
+	color: $grayText;
+}
+.conv-send-form {
+	padding: 20px 15px;
+	border-top: 1px solid $grayColor;
+}
+.send-form-field {
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	input {
+		flex-grow: 1;
+		margin-right: 15px;
+		padding: 7px 10px;
+		border: 0;
+		box-shadow: 0px 1px 5px $grayColor;
+		border-radius: 4px;
+	}
+	button.send-btn {
+		border: 0;
+		background: $themeGradient;
+		color: #fff;
+		padding: 10px 20px;
+		font-size: 14px;
+		border-radius: 4px;
+		i {
+			margin-left: 10px;
+		}
+	}
+}
+.message-body.sent {
+	.message-inner {
+		flex-direction: row-reverse;
+		.message-user {
+			padding-right: 0;
+			padding-left: 20px;
+		}
+	}
+}
+.chatlist-btn{
+	display: none;
+}
+@media only screen and (max-width: 1024px){
+	.messages-screen {
+		padding: 60px 15px !important;
+	}
+	
+	.conversation-info h5 {
+		font-size: 18px !important;
+	}
+	
+	.conversation-header h4 {
+		font-size: 18px;
+	}
+}
+@media only screen and (max-width: 992px){
+	.coversation-list-wrap {
+		width: auto !important;
+	}
+	
+	.coversation-list .row div[class*="col-"] {
+		padding: 0 !important;
+	}
+	.conversation {
+		padding: 15px 5px !important;
+	}
+}
+
+@media only screen and (max-width: 767px){
+	.chatlist {
+		position: absolute;
+		z-index: 2;
+		height: 70vh;
+		left: -450px;
+		top: 60px;
+		transition: 0.5s;
+	}
+	.chatlist.show {
+		left: 0;
+	}
+	.chatlist-btn{
+		position: absolute;
+		z-index: 2;
+		left: 0;
+		top: 10px;
+		display: block;
+	}
+	.chatlist-btn span {
+		width: 40px;
+		height: 40px;
+		border: 1px solid #d1d1d1;
+		background-color: #fff;
+		display: block;
+		text-align: center;
+		line-height: 40px;
+		color: #858484;
+	}
+	
+	.messages-screen {
+		padding: 60px 0px !important;
+	}
+	
+	.conv-chat {
+		max-height: 60vh !important;
+	}
+	.coversation-list-wrap
+	{
+		height: 82vh !important;
+		overflow-y: auto !important;
+	}
+	.conversation {
+		padding: 15px 15px !important;
+	}
+}

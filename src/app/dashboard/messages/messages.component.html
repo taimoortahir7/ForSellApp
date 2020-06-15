@@ -1,0 +1,454 @@
+<div class="messages-screen">
+  <div class="container-fluid">
+    <div class="chatlist-btn"  (click)="show_chatList()">
+      <span><i class="fa fa-users" aria-hidden="true"></i></span>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-lg-auto chatlist"  [ngClass]="{'show' : open_chatList == true}">
+        <div class="coversation-list-wrap">
+          <div class="top-searchbar">
+            <input type="text" placeholder="All Conversations">
+            <i class="fa fa-search"></i>
+          </div>
+
+          <div class="coversation-list">
+
+            <!-- Coversation -->
+            <div class="conversation row active">
+              <div class="user-image col-auto">
+                <img src="assets/images/profile-user.jpg" alt="User Image">
+              </div>
+              <div class="conversation-info col">
+                <h5>abc.com</h5>
+                <p>John</p>
+              </div>
+              <div class="conversation-actions col-auto">
+                <div class="conv-actions">
+                  <a href="#" class="mark-as-fav"><i class="fa fa-star-o"></i><i class="fa fa-star" aria-hidden="true"></i></a>
+                  <a href="#" class="mark-as-read read"><i class="fa fa-envelope-o"></i><i class="fa fa-envelope-open-o"></i></a>
+                </div>
+                <div class="conv-date">
+                  <p>Today</p>
+                </div>
+              </div>
+            </div>
+            <!--END Coversation-->
+
+            <!-- Coversation -->
+            <div class="conversation row unread">
+              <div class="user-image col-auto">
+                <span class="user-avatar">M</span>
+              </div>
+              <div class="conversation-info col">
+                <h5>abc.com</h5>
+                <p>John</p>
+              </div>
+              <div class="conversation-actions col-auto">
+                <div class="conv-actions">
+                  <a href="#" class="mark-as-fav marked"><i class="fa fa-star-o"></i><i class="fa fa-star" aria-hidden="true"></i></a>
+                  <a href="#" class="mark-as-read"><i class="fa fa-envelope-o"></i><i class="fa fa-envelope-open-o"></i></a>
+                </div>
+                <div class="conv-date">
+                  <p>Today</p>
+                </div>
+              </div>
+            </div>
+            <!--END Coversation-->
+
+            <!-- Coversation -->
+            <div class="conversation row">
+              <div class="user-image col-auto">
+                <span class="user-avatar">S</span>
+              </div>
+              <div class="conversation-info col">
+                <h5>abc.com</h5>
+                <p>John</p>
+              </div>
+              <div class="conversation-actions col-auto">
+                <div class="conv-actions">
+                  <a href="#" class="mark-as-fav"><i class="fa fa-star-o"></i><i class="fa fa-star" aria-hidden="true"></i></a>
+                  <a href="#" class="mark-as-read read"><i class="fa fa-envelope-o"></i><i class="fa fa-envelope-open-o"></i></a>
+                </div>
+                <div class="conv-date">
+                  <p>Today</p>
+                </div>
+              </div>
+            </div>
+            <!--END Coversation-->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-lg">
+        <div class="message-main-box">
+          <div class="conversation-header">
+            <h4>abc.com</h4>
+          </div>
+          <div class="convsersation-body">
+            <div class="conv-chat">
+              <!-- Message -->
+              <div class="message-body recieved">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <img src="assets/images/profile-user.jpg" alt="Sender Image">
+                    <p class="message-user-name">John</p>
+                  </div>
+               
+                  <div class="message-text">
+                    <div class="message">is it done?</div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body sent">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <span class="user-avatar">S</span>
+                    <p class="message-user-name">Me</p>
+                  </div>
+                  
+                  <div class="message-text">
+                    <div class="message">is it done?</div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body recieved">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <img src="assets/images/profile-user.jpg" alt="Sender Image">
+                    <p class="message-user-name">John</p>
+                  </div>
+                
+                  <div class="message-text">
+                    <div class="message offer">
+                      <h3>Latest offer - $470</h3>
+                      <div class="offer-btns">
+                        <a href="#" class="btn green-btn">Accept</a>
+                        <a href="#" class="btn red-btn">Reject</a>  
+                      </div>
+                      <a href="#" class="m-link">Send counter offer</a> 
+                    </div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body sent">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <span class="user-avatar">S</span>
+                    <p class="message-user-name">Me</p>
+                  </div>
+                  
+                  <div class="message-text">
+                    <div class="message">is it done?</div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body recieved">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <img src="assets/images/profile-user.jpg" alt="Sender Image">
+                    <p class="message-user-name">John</p>
+                  </div>
+                
+                  <div class="message-text">
+                    <div class="message offer">
+                      <h3>Latest offer - $470</h3>
+                      <div class="offer-btns">
+                        <a href="#" class="btn green-btn">Accept</a>
+                        <a href="#" class="btn red-btn">Reject</a>  
+                      </div>
+                      <a href="#" class="m-link">Send counter offer</a> 
+                    </div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body sent">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <span class="user-avatar">S</span>
+                    <p class="message-user-name">Me</p>
+                  </div>
+                  
+                  <div class="message-text">
+                    <div class="message">is it done?</div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body recieved">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <img src="assets/images/profile-user.jpg" alt="Sender Image">
+                    <p class="message-user-name">John</p>
+                  </div>
+                
+                  <div class="message-text">
+                    <div class="message offer">
+                      <h3>Latest offer - $470</h3>
+                      <div class="offer-btns">
+                        <a href="#" class="btn green-btn">Accept</a>
+                        <a href="#" class="btn red-btn">Reject</a>  
+                      </div>
+                      <a href="#" class="m-link">Send counter offer</a> 
+                    </div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body sent">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <span class="user-avatar">S</span>
+                    <p class="message-user-name">Me</p>
+                  </div>
+                  
+                  <div class="message-text">
+                    <div class="message">is it done?</div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body recieved">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <img src="assets/images/profile-user.jpg" alt="Sender Image">
+                    <p class="message-user-name">John</p>
+                  </div>
+                
+                  <div class="message-text">
+                    <div class="message offer">
+                      <h3>Latest offer - $470</h3>
+                      <div class="offer-btns">
+                        <a href="#" class="btn green-btn">Accept</a>
+                        <a href="#" class="btn red-btn">Reject</a>  
+                      </div>
+                      <a href="#" class="m-link">Send counter offer</a> 
+                    </div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body sent">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <span class="user-avatar">S</span>
+                    <p class="message-user-name">Me</p>
+                  </div>
+                  
+                  <div class="message-text">
+                    <div class="message">is it done?</div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body recieved">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <img src="assets/images/profile-user.jpg" alt="Sender Image">
+                    <p class="message-user-name">John</p>
+                  </div>
+                
+                  <div class="message-text">
+                    <div class="message offer">
+                      <h3>Latest offer - $470</h3>
+                      <div class="offer-btns">
+                        <a href="#" class="btn green-btn">Accept</a>
+                        <a href="#" class="btn red-btn">Reject</a>  
+                      </div>
+                      <a href="#" class="m-link">Send counter offer</a> 
+                    </div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body sent">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <span class="user-avatar">S</span>
+                    <p class="message-user-name">Me</p>
+                  </div>
+                  
+                  <div class="message-text">
+                    <div class="message">is it done?</div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body recieved">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <img src="assets/images/profile-user.jpg" alt="Sender Image">
+                    <p class="message-user-name">John</p>
+                  </div>
+                
+                  <div class="message-text">
+                    <div class="message offer">
+                      <h3>Latest offer - $470</h3>
+                      <div class="offer-btns">
+                        <a href="#" class="btn green-btn">Accept</a>
+                        <a href="#" class="btn red-btn">Reject</a>  
+                      </div>
+                      <a href="#" class="m-link">Send counter offer</a> 
+                    </div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body sent">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <span class="user-avatar">S</span>
+                    <p class="message-user-name">Me</p>
+                  </div>
+                  
+                  <div class="message-text">
+                    <div class="message">is it done?</div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body recieved">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <img src="assets/images/profile-user.jpg" alt="Sender Image">
+                    <p class="message-user-name">John</p>
+                  </div>
+                
+                  <div class="message-text">
+                    <div class="message offer">
+                      <h3>Latest offer - $470</h3>
+                      <div class="offer-btns">
+                        <a href="#" class="btn green-btn">Accept</a>
+                        <a href="#" class="btn red-btn">Reject</a>  
+                      </div>
+                      <a href="#" class="m-link">Send counter offer</a> 
+                    </div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body sent">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <span class="user-avatar">S</span>
+                    <p class="message-user-name">Me</p>
+                  </div>
+                  
+                  <div class="message-text">
+                    <div class="message">is it done?</div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body recieved">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <img src="assets/images/profile-user.jpg" alt="Sender Image">
+                    <p class="message-user-name">John</p>
+                  </div>
+                
+                  <div class="message-text">
+                    <div class="message offer">
+                      <h3>Latest offer - $470</h3>
+                      <div class="offer-btns">
+                        <a href="#" class="btn green-btn">Accept</a>
+                        <a href="#" class="btn red-btn">Reject</a>  
+                      </div>
+                      <a href="#" class="m-link">Send counter offer</a> 
+                    </div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+
+              <!-- Message -->
+              <div class="message-body note">
+                  <p>You rejected the offer - $470</p>
+                  <span class="note-date">Jan 12, 05:45 PM</span>
+              </div>
+              <!-- End Message -->
+              
+              <!-- Message -->
+              <div class="message-body sent">
+                <div class="message-inner">
+                  <div class="message-user">
+                    <span class="user-avatar">S</span>
+                    <p class="message-user-name">Me</p>
+                  </div>
+                  
+                  <div class="message-text">
+                    <div class="message"><a href="#">Latest offer Sent - $480</a></div>
+                    <span class="message-date">Jan 12, 05:45 PM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message -->
+            </div>
+            <div class="conv-send-form">
+              <form>
+                <div class="send-form-field">
+                  <input type="text" placeholder="Type your message">
+                  <button type="submit" class="send-btn">Send <i class="fa fa-send"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>

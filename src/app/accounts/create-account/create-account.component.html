@@ -1,3 +1,105 @@
-<p>
-  create-account works!
-</p>
+<div class="signup-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="left-image">
+            <img src="assets/images/signup-image.png" alt="Signin Page Image">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="signup-form">
+            <h2 class="form-heading text-center">Welcome, <br/> Create your account</h2>
+            <form>
+              <div class="form-field-wrap">
+                <div class="a-form-field">
+                  <label class="field-label">Full Name</label>
+                  <span class="field-icon">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                  </span>
+                  <input type="text" class="form-field" name="fullName">
+                  <span class="field-validator-icon validated">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="a-form-field">
+                  <label class="field-label">Email Address</label>
+                  <span class="field-icon">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                  </span>
+                  <input type="email" class="form-field" name="email">
+                  <span class="field-validator-icon validated">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="a-form-field">
+                  <label class="field-label">Password</label>
+                  <span class="field-icon">
+                      <i class="fa fa-lock" aria-hidden="true"></i>
+                  </span>
+                  <input type="password" class="form-field" name="password">
+                </div>
+              </div>
+      
+              <div class="a-form-bottom">
+                  <div class="row align-items-center">
+                      <div class="col-lg">
+                          <div class="remember-me">
+                              <label>
+                                  <input type="checkbox" name="remember-me">
+                                  <span class="checkbox-label">Remember Me</span>
+                                  <span class="checkmark"></span>
+                              </label>
+                          </div>
+                      </div>
+                      <div class="col-lg">
+                          <a routerLink="/forgot" class="gray-link">Forget Password?</a>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="a-form-bottom">
+                  <div class="row align-items-center">
+                      <div class="col-lg">
+                          <div class="form-btn-wrap">
+                             <button type="submit" class="theme-btn">Create Account</button>
+                          </div>
+                      </div>
+                      <div class="col-lg">
+                          <div class="form-btn-wrap">
+                            <a routerLink="/login" class="theme-btn">Sign In</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="a-form-bottom">
+                  <div class="social-signin">
+                      <p class="gray-text">Or you can join with</p>
+                      <div class="social-signin-links">
+                          <ul>
+                              <li>
+                                  <a href="#" class="social-icon google">
+                                    <img src="assets/images/google.png" alt="Google Icon">
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#" class="social-icon facebook">
+                                    <img src="assets/images/facebook.png" alt="Facebook Icon">
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#" class="social-icon twitter">
+                                    <img src="assets/images/twitter.png" alt="Twitter Icon">
+                                  </a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

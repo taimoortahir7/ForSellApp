@@ -1,5 +1,4 @@
-$purpalColor: #7e0ada;
-$purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1) 60%);
+@import "../../../variables.scss";
 .account-menu-wrap ul {
     list-style: none;
     padding-left: 0;
@@ -19,8 +18,8 @@ $purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1)
 .account-btn {
     padding: 7px 20px;
     display: block;
-    color: $purpalColor;
-    border: 1px solid $purpalColor;
+    color: $themeColor;
+    border: 1px solid $themeColor;
     border-radius: 7px;
     font-weight: 600;
 }
@@ -30,7 +29,7 @@ $purpalGradient: linear-gradient(90deg, rgba(68,13,216,1) 0%, rgba(126,10,218,1)
 }
 
 .account-btn:hover, .account-btn:focus {
-    background: $purpalGradient;;
+    background: $themeGradient;;
     color: #fff;
     text-decoration: none;
 }

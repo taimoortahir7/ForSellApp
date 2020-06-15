@@ -1,8 +1,27 @@
-<div class="container-fluid">
-	<div class="row">
-		<div class="col">
-			<div id="gjs">
-			</div>
-		</div>
-	</div>
+
+
+
+<div class="row no-gutters">
+    <div class="col-auto">
+        <div class="layer-style">
+            <div class="panel__top">
+                <div class="panel__basic-actions"></div>
+                <div class="panel__switcher"></div>
+            </div>
+            <div class="panel__right">
+                <div class="layers-container" [hidden]="layerShow"></div>
+                <div class="styles-container" [hidden]="styleShow">
+                    <div id="traits-container"></div>
+                </div>    
+            </div>
+        </div>
+    </div>
+    <div class="col-auto">
+        <div id="blocks"></div>
+    </div>
+    <div class="col">
+        <div id="gjs">
+            <h1>Hello World Component!</h1>
+        </div>
+    </div>
 </div>
