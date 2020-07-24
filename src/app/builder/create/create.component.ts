@@ -35,10 +35,32 @@ export class CreateComponent implements OnInit, AfterViewInit {
         bm.get('image').set('category', '')
       ])
     });
+    // bm.add('orderSnippet', {
+    //   label: 'Orders',
+    //   category: 'Snippets',
+    //   content: { type: 'orderSnippet' },
+    // })
+    
+    // const defaultType = bm.getType('default')
+    // bm.addType('orderSnippet', {
+    //   model: defaultType.model.extend({
+    //     toHTML() {
+    //       return '<div>{var-to-replace}</div>'
+    //     },
+    //   }),
+    //   view: defaultType.view.extend({
+    //     render(...args) {
+    //       defaultType.view.prototype.render.apply(this, args)
+    //       this.el.innerHTML = '<h2>A custom component content</h2>' // <- Doesn't affect the final HTML code
+    //       return this
+    //     },
+    //   }),
+    // })
     // editor.runCommand('sw-visibility');
     bm.add('custom-block-1', {
       id: 'cb1',
       label: 'Custom one',
+      category: 'Snippets',
       content: {
         tagName: 'div',
         draggable: true,
@@ -47,7 +69,7 @@ export class CreateComponent implements OnInit, AfterViewInit {
           {
             tagName: 'div',
             className: 'testclass',
-            content: '<h2>A custom component content</h2>',
+            content: '<h2 class="test">'+ bm.get('text') +'</h2>',
           }
         ]
       }
@@ -58,12 +80,16 @@ export class CreateComponent implements OnInit, AfterViewInit {
       content: {
         tagName: 'div',
         draggable: true,
-        attributes: { 'custom-block-1-attribute': 'hola!' },
+        attributes: { 'some-attribute': 'some-value' },
         components: [
           {
             tagName: 'div',
-            className: 'testclass',
-            content: '<h2>A custom component content</h2>',
+            components: '<b>Some static content</b>',
+          }, {
+            tagName: 'div',
+            // use `content` for static strings, `components` string will be parsed
+            // and transformed in Components
+            components: '<span>HTML at some point</span>',
           }
         ]
       }

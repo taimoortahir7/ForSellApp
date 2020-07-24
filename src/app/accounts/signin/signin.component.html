@@ -10,7 +10,7 @@
           <div class="signin-form">
             <h2 class="form-heading text-center">Welcome Back :)</h2>
             <form [formGroup]="formGroup" autocomplete="off">
-              <div *ngIf="login_error" class="alert alert-danger" role="alert">
+              <div *ngIf="login_error_msg" class="alert alert-danger" role="alert">
                 {{login_error_msg}}
               </div>
                 

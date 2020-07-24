@@ -1,5 +1,7 @@
 @import "../../variables.scss";
-
+.login {
+    background: #f9fafc;
+}
 .account-page {
     min-height: calc(100vh - 165px);
     display: flex;

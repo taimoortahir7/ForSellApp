@@ -5,9 +5,7 @@ import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './dashboard/header/header.component';
-import { DashboardSidebarComponent } from './dashboard/sidebar/dashboard-sidebar.component';
 import { LandingPagesComponent } from './dashboard/landing-pages/landing-pages.component';
-import { CreateLandingPagesComponent } from './dashboard/create-landing-pages/create-landing-pages.component';
 import { SelectTemplateComponent } from './dashboard/select-template/select-template.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BuilderDashboardComponent } from './builder/builder-dashboard.component';
@@ -26,6 +24,8 @@ import { LoginCheck } from './login-service.guard';
 import { AuthGuardService } from './auth.guard';
 import { AccountHeaderComponent } from './accounts/account-header/account-header.component';
 import { AccountFooterComponent } from './accounts/account-footer/account-footer.component';
+import { DashboardSidebarComponent } from './dashboard/sidebar/dashboard-sidebar.component';
+import { CreateLandingPagesComponent } from './dashboard/create-landing-pages/create-landing-pages.component';
 
 const appRoutes: Routes = [
   {
