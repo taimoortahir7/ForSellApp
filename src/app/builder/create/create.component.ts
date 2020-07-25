@@ -57,19 +57,65 @@ export class CreateComponent implements OnInit, AfterViewInit {
     //   }),
     // })
     // editor.runCommand('sw-visibility');
-    bm.add('custom-block-1', {
+    bm.add('card-block', {
       id: 'cb1',
-      label: 'Custom one',
+      label: 'Card',
       category: 'Snippets',
       content: {
         tagName: 'div',
         draggable: true,
-        attributes: { 'custom-block-1-attribute': 'hola!' },
+        attributes: { title: 'card' },
+        style: {
+          background: '#ededed',
+          padding: '20px',
+          width: '400px',
+          'border-radius': '10px',
+          'text-align': 'center'
+        },
         components: [
           {
             tagName: 'div',
-            className: 'testclass',
-            content: '<h2 class="test">'+ bm.get('text') +'</h2>',
+            style: {
+              color: '#3b3b3b'
+            },
+            components: '<h1>Interesting in buying abc.com</h1>',
+          },
+          {
+            tagName: 'label',
+            style: {
+              color: '#5e03fc',
+              'font-size': '20px'
+            },
+            components: '<h1>$500</h1>',
+          },
+          {
+            tagName: 'label',
+            style: {
+              color: '#737373'
+            },
+            components: '<p>Lorum ipsum dolor sit amet, consectetur adipiscing elit. Lorum ipsum dolor sit amet, consectetur adipiscing elit.</p>',
+          },
+          {
+            tagName: 'button',
+            type: 'button',
+            style: {
+              width: '100px',
+              border: '0',
+              'border-radius': '10px',
+              background: '#5e03fc',
+              color: 'white'
+            },
+            components: '<p>text</p>',
+          },
+          {
+            tagName: 'a',
+            type: 'link',
+            style: {
+              'text-decoration': 'underline',
+              color: '#5e03fc'
+            },
+            traits: ['title', 'href', 'target'],
+            content: '<p>Send custom offer</p>',
           }
         ]
       }
@@ -146,7 +192,7 @@ export class CreateComponent implements OnInit, AfterViewInit {
       pluginsOpts: {
         'gjs-component-countdown': {
           // startTime: '2020-07-27 00:00',
-          endText: 'Expired',
+          // endText: 'Expired',
           blocks: ['countdown'],
           labelCountdownCategory: 'Timer'
         }
