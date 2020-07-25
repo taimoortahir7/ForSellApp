@@ -142,7 +142,15 @@ export class CreateComponent implements OnInit, AfterViewInit {
       width: 'auto',
       // Disable the storage manager for the moment
       storageManager: false,
-      plugins: ['gjs-blocks-basic'],
+      plugins: ['gjs-blocks-basic', 'gjs-component-countdown'],
+      pluginsOpts: {
+        'gjs-component-countdown': {
+          // startTime: '2020-07-27 00:00',
+          endText: 'Expired',
+          blocks: ['countdown'],
+          labelCountdownCategory: 'Timer'
+        }
+      },
       // Avoid any default panel
       layerManager: {
         appendTo: '.layers-container'
