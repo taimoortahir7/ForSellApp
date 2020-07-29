@@ -24,6 +24,10 @@ export class CreateComponent implements OnInit, AfterViewInit {
     this.sidebarPanel.hide();
     editor = this.initializeEditor();
     const bm = editor.BlockManager;
+
+    // var index = 1;
+    // editor.getComponents().add('<div>Text</div>', {at: index});
+
     
     editor.on('load', () => {
       editor.BlockManager.render([
@@ -59,8 +63,14 @@ export class CreateComponent implements OnInit, AfterViewInit {
     // editor.runCommand('sw-visibility');
     bm.add('card-block', {
       id: 'cb1',
-      label: 'Card',
+      label: `<div>
+      <img src="./../../../assets/images/credit-card.svg" width="50px"/>
+      </div>`,
       category: 'Snippets',
+      render: ({ model, className }) => `<div class="${className}__my-wrap">
+      ${model.get('label')}
+      Card
+      </div>`,
       content: {
         tagName: 'div',
         draggable: true,
@@ -70,7 +80,8 @@ export class CreateComponent implements OnInit, AfterViewInit {
           padding: '20px',
           width: '400px',
           'border-radius': '10px',
-          'text-align': 'center'
+          'text-align': 'center',
+          margin: 'auto'
         },
         components: [
           {
@@ -105,6 +116,12 @@ export class CreateComponent implements OnInit, AfterViewInit {
               background: '#5e03fc',
               color: 'white'
             },
+            script: function () {
+              // Do stuff using jquery
+              $(this).click(function(){
+                alert('Hi');
+              });
+            },
             components: '<p>text</p>',
           },
           {
@@ -121,7 +138,7 @@ export class CreateComponent implements OnInit, AfterViewInit {
       }
     })
     bm.add('custom-block-2', {
-      id: 'cb1',
+      id: 'cb2',
       label: 'Custom two',
       content: {
         tagName: 'div',
@@ -141,7 +158,7 @@ export class CreateComponent implements OnInit, AfterViewInit {
       }
     })
     bm.add('custom-block-3', {
-      id: 'cb13',
+      id: 'cb3',
       label: 'input',
       content: {
         tagName: 'input',
@@ -178,6 +195,8 @@ export class CreateComponent implements OnInit, AfterViewInit {
         },
       });
     },2000);
+    // const e = document.getElementsByTagName('button');
+    // console.log('button: ', e);
   }
   private initializeEditor(): any {
     return grapesjs.init({
@@ -193,7 +212,7 @@ export class CreateComponent implements OnInit, AfterViewInit {
         'gjs-component-countdown': {
           // startTime: '2020-07-27 00:00',
           // endText: 'Expired',
-          blocks: ['countdown'],
+          dateInputType: 'datetime-local',
           labelCountdownCategory: 'Timer'
         }
       },
@@ -311,6 +330,10 @@ export class CreateComponent implements OnInit, AfterViewInit {
       
       traitManager: {
         appendTo: '#traits-container',
+      },
+
+      canvas: {
+        scripts: ['https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js']
       }
     });
     
