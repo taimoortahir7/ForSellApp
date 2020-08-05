@@ -3,6 +3,7 @@ import { ServicesService } from './../../services.service';
 import 'grapesjs/dist/css/grapes.min.css';
 import grapesjs from 'grapesjs';
 import 'grapesjs-preset-webpage';
+import jquery from "jquery";
 let editor;
 @Component({
   selector: 'app-create',
@@ -10,6 +11,7 @@ let editor;
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit, AfterViewInit {
+  $: JQueryStatic = jquery;
   private _editor: any;
   add_layers_block = true;
   layerShow = false;
@@ -76,63 +78,161 @@ export class CreateComponent implements OnInit, AfterViewInit {
         draggable: true,
         attributes: { title: 'card' },
         style: {
-          background: '#ededed',
-          padding: '20px',
-          width: '400px',
-          'border-radius': '10px',
-          'text-align': 'center',
+          width: 'fit-content',
+          display: 'flex',
           margin: 'auto'
         },
         components: [
           {
             tagName: 'div',
+            draggable: true,
+            attributes: { title: 'card' },
             style: {
-              color: '#3b3b3b'
-            },
-            components: '<h1>Interesting in buying abc.com</h1>',
-          },
-          {
-            tagName: 'label',
-            style: {
-              color: '#5e03fc',
-              'font-size': '20px'
-            },
-            components: '<h1>$500</h1>',
-          },
-          {
-            tagName: 'label',
-            style: {
-              color: '#737373'
-            },
-            components: '<p>Lorum ipsum dolor sit amet, consectetur adipiscing elit. Lorum ipsum dolor sit amet, consectetur adipiscing elit.</p>',
-          },
-          {
-            tagName: 'button',
-            type: 'button',
-            style: {
-              width: '100px',
-              border: '0',
+              background: '#ededed',
+              padding: '20px',
+              width: '400px',
               'border-radius': '10px',
-              background: '#5e03fc',
-              color: 'white'
+              'text-align': 'center',
+              margin: '20px'
+            },
+            components: [
+              {
+                tagName: 'div',
+                style: {
+                  color: '#3b3b3b'
+                },
+                components: '<h1>Interesting in buying abc.com</h1>',
+              },
+              {
+                tagName: 'label',
+                style: {
+                  color: '#5e03fc',
+                  'font-size': '20px'
+                },
+                components: '<h1>$500</h1>',
+              },
+              {
+                tagName: 'label',
+                style: {
+                  color: '#737373'
+                },
+                components: '<p>Lorum ipsum dolor sit amet, consectetur adipiscing elit. Lorum ipsum dolor sit amet, consectetur adipiscing elit.</p>',
+              },
+              {
+                tagName: 'button',
+                type: 'button',
+                style: {
+                  width: '100px',
+                  border: '0',
+                  'border-radius': '10px',
+                  background: '#5e03fc',
+                  color: 'white'
+                },
+                script: function () {
+                  // Do stuff using jquery
+                  $(this).click(function(){
+                    $( ".something" ).css( "display", "block" );
+                  });
+                },
+                components: '<p>Buy</p>',
+              },
+              {
+                tagName: 'a',
+                type: 'link',
+                style: {
+                  'text-decoration': 'underline',
+                  color: '#5e03fc'
+                },
+                traits: ['title', 'href', 'target'],
+                content: '<p>Send custom offer</p>',
+              }
+            ]
+          },
+          {
+            tagName: 'div',
+            draggable: true,
+            attributes: { title: 'card' },
+            style: {
+              background: '#ededed',
+              padding: '20px',
+              width: '400px',
+              'border-radius': '10px',
+              'text-align': 'center',
+              margin: '20px',
+              display: 'none'
             },
             script: function () {
               // Do stuff using jquery
-              $(this).click(function(){
-                alert('Hi');
-              });
+              $(this).addClass('something');
             },
-            components: '<p>text</p>',
-          },
-          {
-            tagName: 'a',
-            type: 'link',
-            style: {
-              'text-decoration': 'underline',
-              color: '#5e03fc'
-            },
-            traits: ['title', 'href', 'target'],
-            content: '<p>Send custom offer</p>',
+            components: [
+              {
+                tagName: 'div',
+                style: {
+                  color: '#5e03fc',
+                  'text-decoration': 'underline'
+                },
+                components: '<h1>Send Your Offer</h1>',
+              },
+              {
+                tagName: 'label',
+                style: {
+                  color: '#3b3b3b',
+                  'font-size': '20px'
+                },
+                components: '<h4>Your Offer</h4>',
+              },
+              {
+                tagName: 'input',
+                type: 'number',
+                attributes: { placeholder: "$500" },
+                style: {
+                  color: '#737373',
+                  padding: '8px',
+                  'border-radius': '5px',
+                  border: 'none'
+                },
+              },
+              {
+                tagName: 'label',
+                style: {
+                  color: '#3b3b3b',
+                  'font-size': '20px'
+                },
+                components: '<h4>Message</h4>',
+              },
+              {
+                tagName: 'textarea',
+                attributes: { rows: "5", placeholder: "Type here" },
+                type: 'text',
+                style: {
+                  color: '#737373',
+                  padding: '8px',
+                  'border-radius': '5px',
+                  border: 'none',
+                  width: '90%'
+                }
+              },
+              {
+                tagName: 'button',
+                type: 'button',
+                style: {
+                  width: '100px',
+                  border: '0',
+                  'border-radius': '10px',
+                  background: '#5e03fc',
+                  color: 'white',
+                  margin: '20px auto 0px auto'
+                },
+                script: function () {
+                  // Do stuff using jquery
+                  $(this).click(function(){
+                    alert('Hi');
+                  });
+                },
+                components: '<p>Send</p>',
+              }
+            ]
           }
         ]
       }
